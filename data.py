@@ -23,3 +23,4 @@ if response.status_code == 200:
     print("Data has been successfully fetched and saved as 'nyc_data.json'")
 else:
     print("Failed to fetch data. Status code:", response.status_code)
+
