@@ -3,4 +3,10 @@
     width: 100vw;
  }
 
- 
+ .button {
+    border:none;
+    color:black;
+    font-family: helvetica;
+    font-weight: bold;
+    cursor:pointer;
+ }
