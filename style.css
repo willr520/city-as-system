@@ -10,3 +10,7 @@
     font-weight: bold;
     cursor:pointer;
  }
+
+ body {
+    background-color: black;
+ }
