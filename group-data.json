@@ -1,7 +1,7 @@
 [
     {
         "Latitude": 40.705217559420674,
-        "Longitude": -73.92570958482955,
+        "Longitude": -73.92670958482956,
         "Descriptor": "Loud Music/Party"
     },
 
@@ -13,31 +13,31 @@
 
     {
         "Latitude": 40.705217559420674,
-        "Longitude": -73.92570958482955,
+        "Longitude": -73.92770958482955,
         "Descriptor": "Banging/Pounding"
     },
     {
 
-        "Latitude": 40.705217559420674,
+        "Latitude": 40.704217559420674,
         "Longitude": -73.92570958482955,
         "Descriptor": "Car/Truck Horn"
     },
 
     {
-        "Latitude": 40.705217559420674,
+        "Latitude": 40.7035217559420674,
         "Longitude": -73.92570958482955,
         "Descriptor": "Car/Truck Horn"
     },
 
     {
-        "Latitude": 40.705217559420674,
-        "Longitude": -73.92570958482955,
+        "Latitude": 40.7045217559420674,
+        "Longitude": -73.92670958482955,
         "Descriptor": "Loud Music/Party"
     },
 
     {
-        "Latitude": 40.705217559420674,
-        "Longitude": -73.92570958482955,
+        "Latitude": 40.706217559420674,
+        "Longitude": -73.9230958482955,
         "Descriptor": "Car/Truck Horn"
     },
 
@@ -45,6 +45,86 @@
         "Latitude": 40.705217559420674,
         "Longitude": -73.92570958482955,
         "Descriptor": "Noise - Residential"
+    },
+    {
+        "Latitude": 40.779900,
+        "Longitude": -73.949970,
+        "Descriptor": "Loud Music/Party"
+    },
+    {
+        "Latitude": 40.779900,
+        "Longitude": -73.949670,
+        "Descriptor": "Loud Talking"
+    },
+    {
+        "Latitude": 40.779900,
+        "Longitude": -73.949270,
+        "Descriptor": "Banging/Pounding"
+    },
+    {
+        "Latitude": 40.779900,
+        "Longitude": -73.949470,
+        "Descriptor": "Loud Talking"
+    },
+    {
+        "Latitude": 40.779900,
+        "Longitude": -73.949870,
+        "Descriptor": "Loud Talking"
+    },
+    {
+        "Latitude": 40.779900,
+        "Longitude": -73.949870,
+        "Descriptor": "Car/Truck Music"
+    },
+    {
+        "Latitude": 40.779900,
+        "Longitude": -73.949870,
+        "Descriptor": "Car/Truck Music"
+    },
+    {
+        "Latitude": 40.779900,
+        "Longitude": -73.949870,
+        "Descriptor": "Loud Talking"
+    },
+    {
+        "Latitude": 40.779900,
+        "Longitude": -73.949870,
+        "Descriptor": "Car/Truck Music"
+    },
+
+    {
+        "Latitude": 40.7485813,
+        "Longitude":-73.9401501,
+        "Descriptor": "Car/Truck Horn"
+    },
+
+       {
+        "Latitude": 40.7485813,
+        "Longitude":-73.9401501,
+        "Descriptor": "Car/Truck Horn"
+    },
+    {
+        "Latitude": 40.7485813,
+        "Longitude":-73.9401501,
+        "Descriptor": "Car/Truck Horn"
+    },
+    {
+        "Latitude": 40.7485813,
+        "Longitude":-73.9409501,
+        "Descriptor": "Noise - Residential"
+
+    },
+    {
+        "Latitude": 40.7485813,
+        "Longitude":-73.9407501,
+        "Descriptor": "Loud Music/Party"
+
+    },
+    {
+        "Latitude": 40.7485813,
+        "Longitude":-73.9404501,
+        "Descriptor": "Car/Truck Horn"
+
     }
 ]
 

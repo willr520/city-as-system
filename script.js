@@ -46,7 +46,7 @@ fetch('nyc-data.json')
             color: 'none',
             fillColor: color,
             fillOpacity: .75,
-            radius: 100,
+            radius: 70,
         }).addTo(map);
 
         circle.on('mouseover', function (event) {
@@ -97,7 +97,7 @@ document.getElementById('sixnineam').addEventListener('click', function(){
             color: 'none',
             fillColor: color,
             fillOpacity: .75,
-            radius: 100,
+            radius: 70,
         }).addTo(map);
 
         circle.on('mouseover', function (event) {
@@ -146,7 +146,7 @@ document.getElementById('ninetwelvepm').addEventListener('click', function(){
             color: 'none',
             fillColor: color,
             fillOpacity: .75,
-            radius: 100,
+            radius: 70,
         }).addTo(map);
 
         circle.on('mouseover', function (event) {
@@ -192,7 +192,7 @@ document.getElementById('twelvethreepm').addEventListener('click', function(){
             color: 'none',
             fillColor: color,
             fillOpacity: .75,
-            radius: 100,
+            radius: 70,
         }).addTo(map);
 
         circle.on('mouseover', function (event) {
@@ -238,7 +238,7 @@ document.getElementById('threesixpm').addEventListener('click', function(){
             color: 'none',
             fillColor: color,
             fillOpacity: .75,
-            radius: 100,
+            radius: 70,
         }).addTo(map);
 
         circle.on('mouseover', function (event) {
@@ -284,7 +284,7 @@ document.getElementById('sixninepm').addEventListener('click', function(){
             color: 'none',
             fillColor: color,
             fillOpacity: .75,
-            radius: 100,
+            radius: 70,
         }).addTo(map);
 
         circle.on('mouseover', function (event) {
@@ -330,7 +330,7 @@ document.getElementById('ninetwelveam').addEventListener('click', function(){
             color: 'none',
             fillColor: color,
             fillOpacity: .75,
-            radius: 100,
+            radius: 70,
         }).addTo(map);
 
         circle.on('mouseover', function (event) {
@@ -376,7 +376,7 @@ document.getElementById('twelvethreeam').addEventListener('click', function(){
             color: 'none',
             fillColor: color,
             fillOpacity: .75,
-            radius: 100,
+            radius: 70,
         }).addTo(map);
 
         circle.on('mouseover', function (event) {
@@ -423,7 +423,7 @@ document.getElementById('threesixam').addEventListener('click', function(){
             color: 'none',
             fillColor: color,
             fillOpacity: .75,
-            radius: 100,
+            radius: 70,
         }).addTo(map);
 
         circle.on('mouseover', function (event) {
@@ -448,7 +448,13 @@ fetch('group-data.json')
 
     document.getElementById('community').addEventListener('click', function(){
 
-   
+        const colorMap = {
+            'Loud Music/Party':'#FF3B24',
+            'Banging/Pounding': '#00A079',
+            'Loud Talking': '#3D00A0',
+            'Car/Truck Music': '#BB0096',
+
+        }
        
     for (let i = 0; i < data.length; i++) {
         
@@ -456,12 +462,14 @@ fetch('group-data.json')
         const latitude = data[i].Latitude;
         const longitude = data[i].Longitude;
         const descriptor = data[i].Descriptor;
+        const color = colorMap[descriptor] || '#656565';
+
     
     const circle = L.circle([latitude, longitude],{
-        color: 'red',
-        fillColor: 'red',
-        fillOpacity: .75,
-        radius: 150,
+        color: 'yellow',
+            fillColor: color,
+            fillOpacity: .5,
+            radius: 200,
     }).addTo(map);
     circle.on('mouseover', function (event) {
         this.bindPopup(descriptor).openPopup();
