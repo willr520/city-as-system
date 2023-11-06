@@ -6,6 +6,8 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
+
+
 fetch('nyc-data.json')
 .then(response => response.json())
 .then(data => {
@@ -43,7 +45,7 @@ fetch('nyc-data.json')
       const circle = L.circle([latitude, longitude],{
             color: 'none',
             fillColor: color,
-            fillOpacity: 1,
+            fillOpacity: .75,
             radius: 100,
         }).addTo(map);
 
@@ -94,7 +96,7 @@ document.getElementById('sixnineam').addEventListener('click', function(){
           const circle = L.circle([latitude, longitude],{
             color: 'none',
             fillColor: color,
-            fillOpacity: 1,
+            fillOpacity: .75,
             radius: 100,
         }).addTo(map);
 
@@ -143,7 +145,7 @@ document.getElementById('ninetwelvepm').addEventListener('click', function(){
           const circle = L.circle([latitude, longitude],{
             color: 'none',
             fillColor: color,
-            fillOpacity: 1,
+            fillOpacity: .75,
             radius: 100,
         }).addTo(map);
 
@@ -189,7 +191,7 @@ document.getElementById('twelvethreepm').addEventListener('click', function(){
           const circle = L.circle([latitude, longitude],{
             color: 'none',
             fillColor: color,
-            fillOpacity: 1,
+            fillOpacity: .75,
             radius: 100,
         }).addTo(map);
 
@@ -235,7 +237,7 @@ document.getElementById('threesixpm').addEventListener('click', function(){
           const circle = L.circle([latitude, longitude],{
             color: 'none',
             fillColor: color,
-            fillOpacity: 1,
+            fillOpacity: .75,
             radius: 100,
         }).addTo(map);
 
@@ -281,7 +283,7 @@ document.getElementById('sixninepm').addEventListener('click', function(){
           const circle = L.circle([latitude, longitude],{
             color: 'none',
             fillColor: color,
-            fillOpacity: 1,
+            fillOpacity: .75,
             radius: 100,
         }).addTo(map);
 
@@ -327,7 +329,7 @@ document.getElementById('ninetwelveam').addEventListener('click', function(){
           const circle = L.circle([latitude, longitude],{
             color: 'none',
             fillColor: color,
-            fillOpacity: 1,
+            fillOpacity: .75,
             radius: 100,
         }).addTo(map);
 
@@ -373,7 +375,7 @@ document.getElementById('twelvethreeam').addEventListener('click', function(){
           const circle = L.circle([latitude, longitude],{
             color: 'none',
             fillColor: color,
-            fillOpacity: 1,
+            fillOpacity: .75,
             radius: 100,
         }).addTo(map);
 
@@ -420,7 +422,7 @@ document.getElementById('threesixam').addEventListener('click', function(){
           const circle = L.circle([latitude, longitude],{
             color: 'none',
             fillColor: color,
-            fillOpacity: 1,
+            fillOpacity: .75,
             radius: 100,
         }).addTo(map);
 
@@ -437,6 +439,39 @@ document.getElementById('threesixam').addEventListener('click', function(){
 
 
 
+})
+
+fetch('group-data.json')
+.then(response => response.json())
+.then(data => {
+
+
+    document.getElementById('community').addEventListener('click', function(){
+
+   
+       
+    for (let i = 0; i < data.length; i++) {
+        
+
+        const latitude = data[i].Latitude;
+        const longitude = data[i].Longitude;
+        const descriptor = data[i].Descriptor;
+    
+    const circle = L.circle([latitude, longitude],{
+        color: 'red',
+        fillColor: 'red',
+        fillOpacity: .75,
+        radius: 150,
+    }).addTo(map);
+    circle.on('mouseover', function (event) {
+        this.bindPopup(descriptor).openPopup();
+    });
+        circle.on('mouseout', function (event) {
+            this.closePopup();
+});
+
+    }
+})
 })
 
 .catch(error => console.error('error fetching',  error));
