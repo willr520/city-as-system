@@ -13,6 +13,15 @@ fetch('nyc-data.json')
     
     document.getElementById('overall').addEventListener('click', function() {
 
+        const colorMap = {
+            'Loud Music/Party':'#FF3B24',
+            'Banging/Pounding': '#00A079',
+            'Loud Talking': '#3D00A0',
+            'Car/Truck Music': '#BB0096',
+
+        }
+
+
         markers.forEach(marker => {
             map.removeLayer(marker);
         });
@@ -23,6 +32,7 @@ fetch('nyc-data.json')
         const latitude = data[i].Latitude;
         const longitude = data[i].Longitude;
         const descriptor = data[i].Descriptor;
+        const color = colorMap[descriptor] || '#656565';
 
         if (latitude === null || longitude === null) {
            
@@ -30,10 +40,10 @@ fetch('nyc-data.json')
           }
 
       const circle = L.circle([latitude, longitude],{
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5,
-            radius: 50
+            color: 'none',
+            fillColor: color,
+            fillOpacity: 1,
+            radius: 100,
         }).addTo(map);
 
         circle.on('mouseover', function (event) {
@@ -53,7 +63,16 @@ fetch('nyc-data.json')
       }
 })
 
-document.getElementById('morning').addEventListener('click', function(){
+document.getElementById('sixnineam').addEventListener('click', function(){
+
+
+    const colorMap = {
+        'Loud Music/Party':'#FF3B24',
+        'Banging/Pounding': '#00A079',
+        'Loud Talking': '#3D00A0',
+        'Car/Truck Music': '#BB0096',
+        
+    }
 
     markers.forEach(marker => {
         map.removeLayer(marker);
@@ -65,19 +84,17 @@ document.getElementById('morning').addEventListener('click', function(){
         const longitude = data[i].Longitude;
         const descriptor = data[i].Descriptor;
         const createdDate = data[i]['Created Date'];
+        const color = colorMap[descriptor] || '#656565';
 
         const timeString = createdDate.split(' ')[1];
         const time = new Date('1970-01-01T' + timeString + 'Z');
 
-        if (latitude === null || longitude === null ||(time.getHours() < 5 || time.getHours() >= 12) ) {
-           
-            continue;
-          }
+        if (latitude !== null && longitude !== null && time.getHours() >= 6 && time.getHours() < 9) {
           const circle = L.circle([latitude, longitude],{
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5,
-            radius: 50
+            color: 'none',
+            fillColor: color,
+            fillOpacity: 1,
+            radius: 100,
         }).addTo(map);
 
         circle.on('mouseover', function (event) {
@@ -88,9 +105,19 @@ document.getElementById('morning').addEventListener('click', function(){
     });
     markers.push(circle);
     }
+}
 })
 
-document.getElementById('noon').addEventListener('click', function(){
+document.getElementById('ninetwelvepm').addEventListener('click', function(){
+
+
+    const colorMap = {
+        'Loud Music/Party':'#FF3B24',
+        'Banging/Pounding': '#00A079',
+        'Loud Talking': '#3D00A0',
+        'Car/Truck Music': '#BB0096',
+        
+    }
 
     markers.forEach(marker => {
         map.removeLayer(marker);
@@ -104,19 +131,19 @@ document.getElementById('noon').addEventListener('click', function(){
         const longitude = data[i].Longitude;
         const descriptor = data[i].Descriptor;
         const createdDate = data[i]['Created Date'];
+        const color = colorMap[descriptor] || '#656565';
 
         const timeString = createdDate.split(' ')[1];
         const time = new Date('1970-01-01T' + timeString + 'Z');
 
-        if (latitude === null || longitude === null ||(time.getHours() < 12 || time.getHours() >= 17) ) {
+        if (latitude !== null && longitude !== null && time.getHours() >= 9 && time.getHours() < 12)  {
            
-            continue;
-          }
+        
           const circle = L.circle([latitude, longitude],{
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5,
-            radius: 50
+            color: 'none',
+            fillColor: color,
+            fillOpacity: 1,
+            radius: 100,
         }).addTo(map);
 
         circle.on('mouseover', function (event) {
@@ -127,9 +154,20 @@ document.getElementById('noon').addEventListener('click', function(){
     });
     markers.push(circle);
     }
+}
 })
 
-document.getElementById('afternoon').addEventListener('click', function(){
+document.getElementById('twelvethreepm').addEventListener('click', function(){
+
+
+    const colorMap = {
+        'Loud Music/Party':'#FF3B24',
+        'Banging/Pounding': '#00A079',
+        'Loud Talking': '#3D00A0',
+        'Car/Truck Music': '#BB0096',
+        
+    }
+
     markers.forEach(marker => {
         map.removeLayer(marker);
     });
@@ -139,19 +177,19 @@ document.getElementById('afternoon').addEventListener('click', function(){
         const longitude = data[i].Longitude;
         const descriptor = data[i].Descriptor;
         const createdDate = data[i]['Created Date'];
+        const color = colorMap[descriptor] || '#656565';
 
         const timeString = createdDate.split(' ')[1];
         const time = new Date('1970-01-01T' + timeString + 'Z');
 
-        if (latitude === null || longitude === null ||(time.getHours() < 17 || time.getHours() >= 21) ) {
+        if (latitude !== null && longitude !== null && time.getHours() >= 12 && time.getHours() < 15)  {
            
-            continue;
-          }
+            
           const circle = L.circle([latitude, longitude],{
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5,
-            radius: 50
+            color: 'none',
+            fillColor: color,
+            fillOpacity: 1,
+            radius: 100,
         }).addTo(map);
 
         circle.on('mouseover', function (event) {
@@ -162,9 +200,20 @@ document.getElementById('afternoon').addEventListener('click', function(){
     });
     markers.push(circle);
     }
+}
 })
 
-document.getElementById('night').addEventListener('click', function(){
+document.getElementById('threesixpm').addEventListener('click', function(){
+
+
+    const colorMap = {
+        'Loud Music/Party':'#FF3B24',
+        'Banging/Pounding': '#00A079',
+        'Loud Talking': '#3D00A0',
+        'Car/Truck Music': '#BB0096',
+        
+    }
+
     markers.forEach(marker => {
         map.removeLayer(marker);
     });
@@ -174,19 +223,19 @@ document.getElementById('night').addEventListener('click', function(){
         const longitude = data[i].Longitude;
         const descriptor = data[i].Descriptor;
         const createdDate = data[i]['Created Date'];
+        const color = colorMap[descriptor] || '#656565';
 
         const timeString = createdDate.split(' ')[1];
         const time = new Date('1970-01-01T' + timeString + 'Z');
 
-        if (latitude === null || longitude === null ||(time.getHours() >= 5 && time.getHours() < 21)) {
+        if (latitude !== null && longitude !== null && time.getHours() >= 15 && time.getHours() < 18) {
            
-            continue;
-          }
+        
           const circle = L.circle([latitude, longitude],{
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5,
-            radius: 50
+            color: 'none',
+            fillColor: color,
+            fillOpacity: 1,
+            radius: 100,
         }).addTo(map);
 
         circle.on('mouseover', function (event) {
@@ -197,7 +246,195 @@ document.getElementById('night').addEventListener('click', function(){
     });
     markers.push(circle);
     }
+}
 })
+
+document.getElementById('sixninepm').addEventListener('click', function(){
+
+
+    const colorMap = {
+        'Loud Music/Party':'#FF3B24',
+        'Banging/Pounding': '#00A079',
+        'Loud Talking': '#3D00A0',
+        'Car/Truck Music': '#BB0096',
+        
+    }
+    
+    markers.forEach(marker => {
+        map.removeLayer(marker);
+    });
+    markers = [];
+    for (let i =0; i <data.length; i++) {
+        const latitude = data[i].Latitude;
+        const longitude = data[i].Longitude;
+        const descriptor = data[i].Descriptor;
+        const createdDate = data[i]['Created Date'];
+        const color = colorMap[descriptor] || '#656565';
+
+        const timeString = createdDate.split(' ')[1];
+        const time = new Date('1970-01-01T' + timeString + 'Z');
+
+        if (latitude !== null && longitude !== null && time.getHours() >= 18 && time.getHours() < 21) {
+           
+        
+          const circle = L.circle([latitude, longitude],{
+            color: 'none',
+            fillColor: color,
+            fillOpacity: 1,
+            radius: 100,
+        }).addTo(map);
+
+        circle.on('mouseover', function (event) {
+            this.bindPopup(descriptor).openPopup();
+        });
+            circle.on('mouseout', function (event) {
+                this.closePopup();
+    });
+    markers.push(circle);
+    }
+}
+})
+
+document.getElementById('ninetwelveam').addEventListener('click', function(){
+
+
+    const colorMap = {
+        'Loud Music/Party':'#FF3B24',
+        'Banging/Pounding': '#00A079',
+        'Loud Talking': '#3D00A0',
+        'Car/Truck Music': '#BB0096',
+        
+    }
+
+    markers.forEach(marker => {
+        map.removeLayer(marker);
+    });
+    markers = [];
+    for (let i =0; i <data.length; i++) {
+        const latitude = data[i].Latitude;
+        const longitude = data[i].Longitude;
+        const descriptor = data[i].Descriptor;
+        const createdDate = data[i]['Created Date'];
+        const color = colorMap[descriptor] || '#656565';
+
+        const timeString = createdDate.split(' ')[1];
+        const time = new Date('1970-01-01T' + timeString + 'Z');
+
+        if (latitude !== null && longitude !== null && time.getHours() >= 21 && time.getHours() < 24) {
+           
+        
+          const circle = L.circle([latitude, longitude],{
+            color: 'none',
+            fillColor: color,
+            fillOpacity: 1,
+            radius: 100,
+        }).addTo(map);
+
+        circle.on('mouseover', function (event) {
+            this.bindPopup(descriptor).openPopup();
+        });
+            circle.on('mouseout', function (event) {
+                this.closePopup();
+    });
+    markers.push(circle);
+    }
+}
+})
+
+document.getElementById('twelvethreeam').addEventListener('click', function(){
+
+
+    const colorMap = {
+        'Loud Music/Party':'#FF3B24',
+        'Banging/Pounding': '#00A079',
+        'Loud Talking': '#3D00A0',
+        'Car/Truck Music': '#BB0096',
+        
+    }
+
+    markers.forEach(marker => {
+        map.removeLayer(marker);
+    });
+    markers = [];
+    for (let i =0; i <data.length; i++) {
+        const latitude = data[i].Latitude;
+        const longitude = data[i].Longitude;
+        const descriptor = data[i].Descriptor;
+        const createdDate = data[i]['Created Date'];
+        const color = colorMap[descriptor] || '#656565';
+
+        const timeString = createdDate.split(' ')[1];
+        const time = new Date('1970-01-01T' + timeString + 'Z');
+
+        if (latitude !== null && longitude !== null && time.getHours() >= 0 && time.getHours() < 3) {
+           
+        
+          const circle = L.circle([latitude, longitude],{
+            color: 'none',
+            fillColor: color,
+            fillOpacity: 1,
+            radius: 100,
+        }).addTo(map);
+
+        circle.on('mouseover', function (event) {
+            this.bindPopup(descriptor).openPopup();
+        });
+            circle.on('mouseout', function (event) {
+                this.closePopup();
+    });
+    markers.push(circle);
+    }
+}
+})
+
+
+document.getElementById('threesixam').addEventListener('click', function(){
+
+
+    const colorMap = {
+        'Loud Music/Party':'#FF3B24',
+        'Banging/Pounding': '#00A079',
+        'Loud Talking': '#3D00A0',
+        'Car/Truck Music': '#BB0096',
+        
+    }
+
+    markers.forEach(marker => {
+        map.removeLayer(marker);
+    });
+    markers = [];
+    for (let i =0; i <data.length; i++) {
+        const latitude = data[i].Latitude;
+        const longitude = data[i].Longitude;
+        const descriptor = data[i].Descriptor;
+        const createdDate = data[i]['Created Date'];
+        const color = colorMap[descriptor] || '#656565';
+
+        const timeString = createdDate.split(' ')[1];
+        const time = new Date('1970-01-01T' + timeString + 'Z');
+
+        if (latitude !== null && longitude !== null && time.getHours() >= 3 && time.getHours() < 6) {
+           
+        
+          const circle = L.circle([latitude, longitude],{
+            color: 'none',
+            fillColor: color,
+            fillOpacity: 1,
+            radius: 100,
+        }).addTo(map);
+
+        circle.on('mouseover', function (event) {
+            this.bindPopup(descriptor).openPopup();
+        });
+            circle.on('mouseout', function (event) {
+                this.closePopup();
+    });
+    markers.push(circle);
+    }
+}
+})
+
+
 
 })
 

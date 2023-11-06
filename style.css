@@ -9,8 +9,48 @@
     font-family: helvetica;
     font-weight: bold;
     cursor:pointer;
+    font-size: 20px;
+    text-align: center; 
  }
 
  body {
-    background-color: black;
+    background-color: white;
+ }
+
+ ul {
+   text-decoration: none;
+   list-style-type: none;
+   font-family: helvetica;
+   font-weight: bold;
+   right:0px;
+ }
+
+ #music {
+   
+   background: white;
+   color:#FF3B24;
+ }
+
+ #banging {
+   
+   background: white;
+   color:#00A079;
+ }
+
+ #talking {
+   
+   background: white;
+   color:#3D00A0;
+ }
+
+ #car {
+  
+   background: white;
+   color:#BB0096;
+ }
+
+ #other {
+   
+   background: white;
+   color:#656565;
  }
