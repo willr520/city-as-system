@@ -16,13 +16,13 @@ fetch('nyc-data.json')
     
     document.getElementById('overall').addEventListener('click', function() {
 
-        const colorMap = {
+        /*const colorMap = {
             'Loud Music/Party':'#FF3B24',
             'Banging/Pounding': '#00A079',
             'Loud Talking': '#3D00A0',
             'Car/Truck Music': '#BB0096',
 
-        }
+        }*/
 
 
         markers.forEach(marker => {
@@ -35,7 +35,7 @@ fetch('nyc-data.json')
         const latitude = data[i].Latitude;
         const longitude = data[i].Longitude;
         const descriptor = data[i].Descriptor;
-        const color = colorMap[descriptor] || '#656565';
+       // const color = colorMap[descriptor] || '#656565';
 
         if (latitude === null || longitude === null) {
            
@@ -43,8 +43,8 @@ fetch('nyc-data.json')
           }
 
       const circle = L.circle([latitude, longitude],{
-            color: 'none',
-            fillColor: color,
+            color: 'red',
+            fillColor: 'red',
             fillOpacity: .75,
             radius: 70,
         }).addTo(map);

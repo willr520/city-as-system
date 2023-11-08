@@ -14,7 +14,7 @@
     font-size: 18px;
     background: none;
     z-index: 1000;
-    left:20px;
+    right:20px;
     background:rgba(255, 255, 255, .5);
 
    
@@ -26,7 +26,7 @@
 #buttons {
    z-index: 1000;
    position:absolute;
-   left:20px;
+   right:20px;
    top:25%;
 }
  body {
@@ -88,4 +88,9 @@
    background:rgba(255, 255, 255, .5);
    font-family: helvetica;
    font-weight: bold;
+ }
+
+ a {
+  text-decoration:none;
+  color:black;
  }
